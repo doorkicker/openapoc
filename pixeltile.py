@@ -12,12 +12,16 @@ img_px = img_out.load()
 
 i = 0
 j = 0
+px = None
 while i < w:
 	j = 0
 	while j < h:
-		#if hkey_px.getpixel([i, j]) != (232, 182, 98) and hkey_px.getpixel([i, j]) != (239, 219, 84):
-		if h_key.getpixel((i, j)) != (232, 182, 98) and h_key.getpixel((i, j)) != (239, 219, 84):
-			pass
+		px = h_key.getpixel((i, j))
+		#if px != (232, 182, 98) and px != (239, 219, 84):
+		if px != (232, 182, 98):
+			#print(f"match! i: {i}, j: {j}")
+			img_out.putpixel((i, j), world_map.getpixel((i, j)))
+			#img_out.putpixel((i, j), (0, 0, 0))
 		j = j + 1
 	i = i + 1
 
@@ -25,3 +29,5 @@ while i < w:
 
 h_key.close()
 world_map.close()
+img_out.save("world_no_ocean.bmp")
+img_out.close()
