@@ -1,7 +1,7 @@
 from PIL import Image
 
-h_key = Image.open("elevations2.bmp")
-world_map = Image.open("biomes.bmp")
+h_key = Image.open("elevation2.bmp")
+world_map = Image.open("biomes2.bmp")
 w, h = h_key.size
 #Now look through h_key, and if the pixel at [i][j] is NOT a 'water' pixel, then copy
 #the corresponding at pixel [i][j] in world_map, and save it at [i][j] into a new image
